@@ -1,9 +1,9 @@
 # PAAD
 This repository stores the Pytorch implementation of PAAD for the following paper:
 
-**T. Ji, A. N. Sivakumar, G. Chowdhary and K. Driggs-Campbell, "Proactive Anomaly Detection for Robot Navigation with Multi-Sensor Fusion", in *IEEE Robotics and Automation Letters (RA-L)*, 2020**
+**T. Ji, A. N. Sivakumar, G. Chowdhary and K. Driggs-Campbell, "Proactive Anomaly Detection for Robot Navigation with Multi-Sensor Fusion", in *IEEE Robotics and Automation Letters (RA-L)*, 2022**
 
-PAAD fuses camera, LiDAR, and planned path to predict the probability of future failure for robot navigation. The code was tested on Ubuntu 20.04 with Python 3.8 and Pytorch 1.8.1.
+**PAAD fuses camera, LiDAR, and planned path to predict the probability of future failure for robot navigation.** The code was tested on Ubuntu 20.04 with Python 3.8 and Pytorch 1.8.1.
 
 The paper and the demonstration video will be available soon.
 
@@ -17,11 +17,11 @@ The field robot data and the network weights can be found [here](https://uofi.bo
 
 ## Description of the code
 More detailed comments can be found in the code. Here are some general descriptions:
-* `nets`: Contains network architectures for the PAAD.
+* `nets`: Contains network architectures for PAAD.
 
 * `rosnode`: Contains a rosnode which performs proactive anomaly detection in real-time using PAAD.
 
-* `train.py` and `test.py`: Train and test the PAAD on the dataset, respectively.
+* `train.py` and `test.py`: Train and test PAAD on the dataset, respectively.
 
 * `custom_dataset.py`: Loads the dataset from CSV files and image folders.
 
