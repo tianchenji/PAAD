@@ -1,7 +1,11 @@
 # PAAD
 This repository stores the Pytorch implementation of PAAD for the following paper:
 
-**T. Ji, A. N. Sivakumar, G. Chowdhary and K. Driggs-Campbell, "Proactive Anomaly Detection for Robot Navigation with Multi-Sensor Fusion", in *IEEE Robotics and Automation Letters (RA-L)*, 2022**
+### Proactive Anomaly Detection for Robot Navigation with Multi-Sensor Fusion
+
+#### [Tianchen Ji](https://tianchenji.github.io/), Arun Narenthiran Sivakumar, [Girish Chowdhary](http://daslab.illinois.edu/), [Katie Driggs-Campbell](https://krdc.web.illinois.edu/)
+
+published in *IEEE Robotics and Automation Letters (RA-L)*, 2022
 
 **PAAD fuses camera, LiDAR, and planned path to predict the probability of future failure for robot navigation.** The code was tested on Ubuntu 20.04 with Python 3.8 and Pytorch 1.8.1.
 
