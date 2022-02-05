@@ -36,11 +36,21 @@ The field robot data and the network weights can be found [here](https://uofi.bo
 Each datapoint in the dataset consists of the following information:
 * **image:** a front-view image of size 320 × 240.
 * **LiDAR scan:** a range reading of size 1081, which covers a 270° range with 0.25° angular resolution.
-* **x coordinates of the planned trajectory**
-* **y coordinates of the planned trajectory**
+* **x coordinates of the planned trajectory in bird's-eye view**
+* **y coordinates of the planned trajectory in bird's-eye view**
 * **label:** a vector of size 10, which indicates if the robot fails the navigation task in the next 10 time steps.
 
+The reference frame, in which planned trajectories are defined, is as follows:
+
+<img src="/figures/reference_frmae.png" height="280" />
+
 Sample datapoints from the dataset are as follows:
+
+<img src="/figures/dataset_failure_1.png" height="135" /> <img src="/figures/dataset_failure_2.png" height="135" /> <img src="/figures/dataset_normal_1.png" height="135" /> <img src="/figures/dataset_normal_2.png" height="135" />
+
+The training set consists of 29292 datapoints and contains 2258 anomalous behaviors collected over 5 days, while the test set consists of 6869 datapoints and contains 689 anomalous behaviors from data colected on 2 additional days.
+
+The 6 rosbags used for the real-time test were collected on additional days and contain all the necessary perception signals for PAAD. The detailed related rostopics can be found in the sample code provided in `rosnode`.
 
 ## Citation
 To be updated.
