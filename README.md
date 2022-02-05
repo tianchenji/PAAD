@@ -16,14 +16,9 @@ Despite the rapid advancement of navigation algorithms, mobile robots often prod
 
 <img src="/figures/sample_trajectory.png" height="280" /><img src="/figures/sample_lidar.png" height="278" />
 
-## Dataset
-The field robot data and the network weights can be found [here](https://uofi.box.com/s/n1qhun9u7lwgtgeyb6hd0tzxpbyxgpl7).
-
 ## Description of the code
 More detailed comments can be found in the code. Here are some general descriptions:
 * `nets`: Contains network architectures for PAAD.
-
-* `rosnode`: Contains a rosnode which performs proactive anomaly detection in real-time using PAAD.
 
 * `train.py` and `test.py`: Train and test PAAD on the dataset, respectively.
 
@@ -32,6 +27,20 @@ More detailed comments can be found in the code. Here are some general descripti
 * `dataset_vis.py`: Visualizes a datapoint in the dataset. The annotated planned trajectory is projected onto the front-view image, and the 2D lidar scan around the robot is plotted.
 
 * `utils.py`: Contains the code for loss functions and metrics for quantitative results.
+
+* `rosnode`: Contains a rosnode which performs proactive anomaly detection in real-time using PAAD.
+
+## Dataset
+The field robot data and the network weights can be found [here](https://uofi.box.com/s/n1qhun9u7lwgtgeyb6hd0tzxpbyxgpl7). Both the offline dataset and the rosbags used for real-time test in the paper are available.
+
+Each datapoint in the dataset consists of the following information:
+* **image:** a front-view image of size 320 × 240.
+* **LiDAR scan:** a range reading of size 1081, which covers a 270° range with 0.25° angular resolution.
+* **x coordinates of the planned trajectory**
+* **y coordinates of the planned trajectory**
+* **label:** a vector of size 10, which indicates if the robot fails the navigation task in the next 10 time steps.
+
+Sample datapoints from the dataset are as follows:
 
 ## Citation
 To be updated.
