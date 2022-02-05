@@ -42,7 +42,9 @@ Each datapoint in the dataset consists of the following information:
 
 The reference frame, in which planned trajectories are defined, is as follows:
 
-<img src="/figures/reference_frmae.png" height="280" />
+<p align="center">
+  <img src="/figures/reference_frame.png" height="140" />
+</p>
 
 Sample datapoints from the dataset are as follows:
 
