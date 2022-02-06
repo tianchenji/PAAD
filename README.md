@@ -9,7 +9,7 @@ published in *IEEE Robotics and Automation Letters (RA-L)*, 2022
 
 **PAAD fuses camera, LiDAR, and planned path to predict the probability of future failure for robot navigation.** The code was tested on Ubuntu 20.04 with Python 3.8 and Pytorch 1.8.1.
 
-The paper and the demonstration video will be available soon.
+**\[paper\] [\[video\]](https://youtu.be/7jFLdpNEiXM) [\[dataset\]](https://uofi.box.com/s/n1qhun9u7lwgtgeyb6hd0tzxpbyxgpl7)**
 
 ## Abstract
 Despite the rapid advancement of navigation algorithms, mobile robots often produce anomalous behaviors that can lead to navigation failures. We propose a proactive anomaly detection network (PAAD) for robot navigation in unstructured and uncertain environments. PAAD predicts the probability of future failure based on the planned motions from the predictive controller and the current observation from the perception module. Multi-sensor signals are fused effectively to provide robust anomaly detection in the presence of sensor occlusion as seen in field environments. Our experiments on field robot data demonstrate superior failure identification performance than previous methods, and that our model can capture anomalous behaviors in real-time while maintaining a low false detection rate in cluttered fields.
@@ -31,7 +31,7 @@ More detailed comments can be found in the code. Here are some general descripti
 * `rosnode`: Contains a rosnode which performs proactive anomaly detection in real-time using PAAD.
 
 ## Dataset
-The field robot data and the network weights can be found [here](https://uofi.box.com/s/n1qhun9u7lwgtgeyb6hd0tzxpbyxgpl7). Both the offline dataset and the rosbags used for real-time test in the paper are available.
+Both the offline dataset and the rosbags used for real-time test in the paper are available.
 
 Each datapoint in the dataset consists of the following information:
 * **image:** a front-view image of size 320 × 240.
