@@ -9,7 +9,7 @@ published in *IEEE Robotics and Automation Letters (RA-L)*, 2022
 
 **PAAD fuses camera, LiDAR, and planned path to predict the probability of future failure for robot navigation.** The code was tested on Ubuntu 20.04 with Python 3.8 and Pytorch 1.8.1.
 
-The paper and the demonstration video will be available soon.
+**[\[paper\]](https://ieeexplore.ieee.org/document/9720937) [\[video\]](https://youtu.be/7jFLdpNEiXM) [\[dataset\]](https://uofi.box.com/s/n1qhun9u7lwgtgeyb6hd0tzxpbyxgpl7)**
 
 ## Abstract
 Despite the rapid advancement of navigation algorithms, mobile robots often produce anomalous behaviors that can lead to navigation failures. We propose a proactive anomaly detection network (PAAD) for robot navigation in unstructured and uncertain environments. PAAD predicts the probability of future failure based on the planned motions from the predictive controller and the current observation from the perception module. Multi-sensor signals are fused effectively to provide robust anomaly detection in the presence of sensor occlusion as seen in field environments. Our experiments on field robot data demonstrate superior failure identification performance than previous methods, and that our model can capture anomalous behaviors in real-time while maintaining a low false detection rate in cluttered fields.
@@ -31,19 +31,42 @@ More detailed comments can be found in the code. Here are some general descripti
 * `rosnode`: Contains a rosnode which performs proactive anomaly detection in real-time using PAAD.
 
 ## Dataset
-The field robot data and the network weights can be found [here](https://uofi.box.com/s/n1qhun9u7lwgtgeyb6hd0tzxpbyxgpl7). Both the offline dataset and the rosbags used for real-time test in the paper are available.
+Both the offline dataset and the rosbags used for real-time test in the paper are available.
 
 Each datapoint in the dataset consists of the following information:
 * **image:** a front-view image of size 320 × 240.
 * **LiDAR scan:** a range reading of size 1081, which covers a 270° range with 0.25° angular resolution.
-* **x coordinates of the planned trajectory**
-* **y coordinates of the planned trajectory**
+* **x coordinates of the planned trajectory in bird's-eye view**
+* **y coordinates of the planned trajectory in bird's-eye view**
 * **label:** a vector of size 10, which indicates if the robot fails the navigation task in the next 10 time steps.
+
+The reference frame, in which planned trajectories are defined, is as follows:
+
+<p align="center">
+  <img src="/figures/reference_frame.png" height="140" />
+</p>
 
 Sample datapoints from the dataset are as follows:
 
+<img src="/figures/dataset_failure_1.png" height="135" /> <img src="/figures/dataset_failure_2.png" height="135" /> <img src="/figures/dataset_normal_1.png" height="135" /> <img src="/figures/dataset_normal_2.png" height="135" />
+
+The training set consists of 29292 datapoints and contains 2258 anomalous behaviors collected over 5 days, while the test set consists of 6869 datapoints and contains 689 anomalous behaviors from data colected on 2 additional days.
+
+The 6 rosbags used for the real-time test were collected on additional days and contain all the necessary perception signals for PAAD. The detailed related rostopics can be found in the sample code provided in `rosnode`.
+
 ## Citation
-To be updated.
+If you find the code or the dataset useful, please cite our paper:
+```
+@article{ji2022proactive,
+  title={Proactive Anomaly Detection for Robot Navigation With Multi-Sensor Fusion},
+  author={Ji, Tianchen and Sivakumar, Arun Narenthiran and Chowdhary, Girish and Driggs-Campbell, Katherine},
+  journal={IEEE Robotics and Automation Letters},
+  year={2022},
+  volume={7},
+  number={2},
+  pages={4975-4982},
+  doi={10.1109/LRA.2022.3153989}}
+```
 
 ## Contact
 Should you have any questions or comments on the code, please feel free to open an issue or contact the author at tj12@illinois.edu.
