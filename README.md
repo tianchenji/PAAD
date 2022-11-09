@@ -54,6 +54,33 @@ The training set consists of 29292 datapoints and contains 2258 anomalous behavi
 
 The 6 rosbags used for the real-time test were collected on additional days and contain all the necessary perception signals for PAAD. The detailed related rostopics can be found in the sample code provided in `rosnode`.
 
+## ROS
+A minimal ROS workspace for running the real-time test of PAAD could look like this:
+<pre>
+workspace_folder/         -- WORKSPACE
+  src/
+    CMakeLists.txt
+    fpn_msgs/             -- catkin package for custom msgs
+      CMakeLists.txt
+      package.xml
+      msg/
+        <b>Terrabot.msg</b>
+    proactive_ad/         -- catkin package for PAAD
+      CMakeLists.txt
+      package.xml
+      src/
+        <b>ad_paad.py</b>
+        <b>nets/</b>
+          <b>...</b>
+</pre>
+Please follow ROS [tutorials](http://wiki.ros.org/ROS/Tutorials) to create ROS [packages](http://wiki.ros.org/ROS/Tutorials/CreatingPackage) and [msgs](http://wiki.ros.org/ROS/Tutorials/CreatingMsgAndSrv).
+
+After the workspace is ready, PAAD can be tested in real time by executing the following steps:
+1. run `catkin_make` in the workspace.
+2. run `python3 ad_paad.py`
+3. play a bag file of your choice.
+
+
 ## Citation
 If you find the code or the dataset useful, please cite our paper:
 ```
