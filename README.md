@@ -80,6 +80,7 @@ After the workspace is ready, PAAD can be tested in real time by executing the f
 2. run `python3 ad_paad.py`
 3. play a bag file of your choice.
 
+The RGB images and LiDAR point clouds can be visualized in real time through [rviz](http://wiki.ros.org/rviz/UserGuide).
 
 ## Citation
 If you find the code or the dataset useful, please cite our paper:
